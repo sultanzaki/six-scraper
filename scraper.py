@@ -39,9 +39,16 @@ def load_last_grades():
         if not os.path.exists('last_grades.json'):
             log_activity('last_grades.json not found, creating new file')
             with open('last_grades.json', 'w') as f:
-                json.dump({}, f)
+                json.dump({
+                    "Big Data untuk Pertanian": "",
+                    "Teknologi Produksi Bersih": "",
+                    "Instrumentasi dan Pengendalian Sistem Hayati": "",
+                    "Tugas Akhir Penelitian": "",
+                    "Pemasaran Ramah Lingkungan": "",
+                    "Manajemen Rekayasa Industri": ""
+                }, f)
             return {}
-            
+        
         with open('last_grades.json', 'r') as f:
             content = f.read()
             if not content.strip():
